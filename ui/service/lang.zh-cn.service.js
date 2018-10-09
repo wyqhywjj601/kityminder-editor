@@ -417,6 +417,14 @@ angular.module('kityminderEditor')
 				},
 				'resource': {
 					'resource': '资源...'
+				},
+				'panel':{
+					'exports':'导出',
+					'open':'打开',
+					'saveas':'另存为',
+					'history':'历史版本',
+					'help':'帮助',
+					'cloud':'同步到云',
 				}
 			}
 		}

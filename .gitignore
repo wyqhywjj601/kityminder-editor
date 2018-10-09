@@ -3,7 +3,7 @@
 bower_components/
 node_modules/
 dist/
-ui/templates.js
 .tmp/
 upload/
-.history
+.history/
+ui/templates.js

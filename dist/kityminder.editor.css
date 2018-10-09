@@ -1525,4 +1525,45 @@ div a.theme-item {
   cursor: -moz-grabbing;
   cursor: grabbing;
 }
+.panel {
+  color: white;
+  margin: 0;
+  height: 40px;
+  font-size: 14px;
+  line-height: 40px;
+  font-family: 'Hiragino Sans GB', 'Arial', 'Microsoft Yahei';
+  font-weight: normal;
+  padding: 0 20px;
+}
+.panel ul {
+  list-style: none;
+  padding-left: 0;
+}
+.panel ul li {
+  float: left;
+  padding: 0 20px;
+  border-right: 1px solid #fff;
+  cursor: pointer;
+}
+.panel ul li.active {
+  background-color: #fdb4b4;
+}
+.panel .tab-menu {
+  position: fixed;
+  background: #fff;
+  width: 600px;
+  top: 40px;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  border: 1px solid #fc8383;
+}
+.panel .tab-menu .tab-body h2 {
+  color: #666;
+  padding: 25px 0 30px 37px;
+  font-size: 36px;
+}
+.panel .tab-pane {
+  color: #666;
+}
 /*# sourceMappingURL=kityminder.editor.css.map */

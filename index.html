@@ -23,21 +23,12 @@
             height: 100%;
             overflow: hidden;
         }
-        h1.editor-title {
-            background: #393F4F;
-            color: white;
-            margin: 0;
-            height: 40px;
-            font-size: 14px;
-            line-height: 40px;
-            font-family: 'Hiragino Sans GB', 'Arial', 'Microsoft Yahei';
-            font-weight: normal;
-            padding: 0 20px;
-        }
+        
+
     </style>
 </head>
 <body ng-app="kityminderDemo" ng-controller="MainController">
-    <h1 class="editor-title">KityMinder Editor - Powered By FEXx</h1>
+    <kityminder-panel ></kityminder-panel>
     <kityminder-editor on-init="initEditor(editor, minder)"></kityminder-editor>
 </body>
 
@@ -104,15 +95,26 @@
 <script src="ui/directive/searchBox/searchBox.directive.js"></script>
 <script src="ui/directive/searchBtn/searchBtn.directive.js"></script>
 
+<script src="panel/directive/kityminderPanel/kityminderPanel.directive.js"></script>
+
 
 <script>
-	angular.module('kityminderDemo', ['kityminderEditor'])
+
+	 angular.module('kityminderDemo', ['kityminderEditor','kityminderPanel'])
 			.controller('MainController', function($scope) {
 				$scope.initEditor = function(editor, minder) {
 					window.editor = editor;
 					window.minder = minder;
 				};
-			});
+
+                $scope.add=function () {				//定义ng-click触发的函数add();
+                if($scope.goods.num<$scope.goods.kucun){
+                    $scope.goods.num++;
+                }
+                };
+
+        });
+
 
 </script>
 

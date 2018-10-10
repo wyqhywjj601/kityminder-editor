@@ -47,6 +47,9 @@ angular.module('kityminderPanel', [
 		link: function ($scope) {
 			var minder = $scope.minder;
 
+			/**
+			 *  点击‘导出到本地’按钮触发事件
+			 */
 			$scope.deriveMind = function () {
 
 				var derive = {};
@@ -64,6 +67,25 @@ angular.module('kityminderPanel', [
 				});
 
 				imageModal.result.then(function (result) {
+					minder.execCommand('image', result.url, result.title || '');
+				});
+			}
+
+
+			/**
+			 *  点击‘在本地打开’按钮触发事件
+			 */
+			$scope.importFile = function () {
+
+
+				var importModal = $modal.open({
+					animation: true,
+					templateUrl: 'panel/dialog/importModal/importModal.tpl.html',
+					controller: 'importModal.ctrl',
+					size: 'md',
+				});
+
+				importModal.result.then(function (result) {
 					minder.execCommand('image', result.url, result.title || '');
 				});
 			}

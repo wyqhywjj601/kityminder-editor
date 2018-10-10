@@ -67,7 +67,7 @@ angular.module('kityminderPanel', [
 				});
 
 				imageModal.result.then(function (result) {
-					minder.execCommand('image', result.url, result.title || '');
+					// minder.execCommand('image', result.url, result.title || '');
 				});
 			}
 
@@ -86,7 +86,7 @@ angular.module('kityminderPanel', [
 				});
 
 				importModal.result.then(function (result) {
-					minder.execCommand('image', result.url, result.title || '');
+					// minder.execCommand('image', result.url, result.title || '');
 				});
 			}
 

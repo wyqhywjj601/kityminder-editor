@@ -1,9 +1,8 @@
-var panelModule = angular.module('kityminderPanel', [
+angular.module('kityminderPanel', [
 	'ui.bootstrap',
-	'ui.colorpicker'
-]);
-
-panelModule.directive('kityminderPanel', ['config', function (config, minderService, revokeDialog) {
+	'ui.colorpicker',
+	'kityminderEditor'
+]).directive('kityminderPanel', ['$modal', function ($modal) {
 	return {
 		restrict: 'E',
 		templateUrl: 'panel/directive/kityminderPanel/kityminderPanel.html',
@@ -44,6 +43,31 @@ panelModule.directive('kityminderPanel', ['config', function (config, minderServ
 					active: false
 				}
 			];
+		},
+		link: function ($scope) {
+			var minder = $scope.minder;
+
+			$scope.deriveMind = function () {
+
+				var derive = {};
+
+				var imageModal = $modal.open({
+					animation: true,
+					templateUrl: 'panel/dialog/derive/derive.tpl.html',
+					controller: 'derive.ctrl',
+					size: 'md',
+					resolve: {
+						derive: function () {
+							return derive;
+						}
+					}
+				});
+
+				imageModal.result.then(function (result) {
+					minder.execCommand('image', result.url, result.title || '');
+				});
+			}
+
 		}
 	}
 }]);

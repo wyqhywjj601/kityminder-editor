@@ -43,7 +43,7 @@ module.exports = function (grunt) {
             less: {
                 files: ['less/**/*.less'],
                 tasks:['less:compile'],
-                options: {livereload:false}
+                options: {livereload:true}
             }
         },
         clean: {

@@ -6,12 +6,12 @@ angular.module('kityminderPanel')
             url: derive.url || '',
             title: derive.title || '',
             R_URL: /^https?\:\/\/\w+/,
-            protocolList: ['xmind', 'text', 'markdown'],
+            protocolList: ['json', 'text', 'markdown'],
 
         };
 
         $scope.ptoyocolDict = {
-            xmind: 'xmind 格式 (.xmind)',
+            json: 'KityMinder 格式 (.km)',
             text: '大纲文本 (.txt)',
             markdown: 'Markdown/GFM 格式 (.md)'
         }

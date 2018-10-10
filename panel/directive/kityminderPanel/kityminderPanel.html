@@ -1,8 +1,9 @@
 <header class="panel">
     
     <ul class="clearfix">
-        <span style="float: left;margin-right: 1px solid #fff;">脑图管理系统</span>
         <!--顶部tab栏-->
+        <li ng-click="select('')" >脑图管理系统</li>
+
         <li ng-repeat="tab in tabs" ng-class="{active:tab.active}" ng-click="select(tab)" >{{ tab.name | lang:'panel' }}</li>
       
     </ul>

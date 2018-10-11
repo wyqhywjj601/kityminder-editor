@@ -1,8 +1,7 @@
 angular.module('kityminderPanel', [
 	'ui.bootstrap',
 	'ui.colorpicker',
-	'kityminderEditor'
-]).directive('kityminderPanel', ['$modal', function ($modal) {
+]).directive('kityminderPanel', ['$modal','$timeout', function ($modal,$timeout) {
 	return {
 		restrict: 'E',
 		templateUrl: 'panel/directive/kityminderPanel/kityminderPanel.html',
@@ -22,7 +21,7 @@ angular.module('kityminderPanel', [
 					$scope.tabs[i].active = false;
 				}
 			};
-			$scope.current = {};
+			var current = $scope.current = {};
 
 			// 顶部列表
 			$scope.tabs = [{
@@ -43,9 +42,20 @@ angular.module('kityminderPanel', [
 					active: false
 				}
 			];
+
+			// 监听点击其他地方，收起菜单栏
+			angular.element('body')
+				.on('click', '.minder-editor-container', function () {
+					console.log($scope.current.name);
+					$timeout(function(){
+						$scope.current.name = '';
+						}, 0)
+				});
+
 		},
 		link: function ($scope) {
 			var minder = $scope.minder;
+
 
 			/**
 			 *  点击‘导出到本地’按钮触发事件
@@ -76,8 +86,6 @@ angular.module('kityminderPanel', [
 			 *  点击‘在本地打开’按钮触发事件
 			 */
 			$scope.importFile = function () {
-
-
 				var importModal = $modal.open({
 					animation: true,
 					templateUrl: 'panel/dialog/importModal/importModal.tpl.html',

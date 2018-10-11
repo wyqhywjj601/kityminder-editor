@@ -29,10 +29,15 @@
         background: #fff;
         width: 600px;
         top: 40px;
-        left: 0;
+        left: -600px;
         bottom: 0;
         z-index: 10;
         border: 1px solid #fc8383;
+        transition: .3s left ease;
+        &.show{
+            left: 0
+        }
+
 
         .tab-body h2 {
             color: #666;
@@ -108,5 +113,20 @@
         &:hover {
             background-color: #f4f5f7;
         }
+    }
+}
+
+.import-modal {
+    label {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .help-block {
+        display: block;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        color: #737373;
     }
 }

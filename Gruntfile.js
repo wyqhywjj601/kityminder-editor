@@ -76,7 +76,8 @@ module.exports = function (grunt) {
         browserSync: {
             bsFiles: {
                 dist: 'dist/css/*.css',
-                src: 'dist/**'
+                // src: 'dist/**'
+                src: 'panel/**'
             },
             options: {
                 server: {

@@ -1,7 +1,7 @@
 angular.module('kityminderPanel', [
 	'ui.bootstrap',
 	'ui.colorpicker',
-]).directive('kityminderPanel', ['$modal','$timeout', function ($modal,$timeout) {
+]).directive('kityminderPanel', ['$modal', '$timeout', function ($modal, $timeout) {
 	return {
 		restrict: 'E',
 		templateUrl: 'panel/directive/kityminderPanel/kityminderPanel.html',
@@ -15,16 +15,13 @@ angular.module('kityminderPanel', [
 				console.log($scope.current.name);
 			};
 
-			// 取消选择所有tabs
-			$scope.unSelectAll = function () {
-				for (var i = 0; i < $scope.tabs.length; i++) {
-					$scope.tabs[i].active = false;
-				}
-			};
-			var current = $scope.current = {};
-
 			// 顶部列表
-			$scope.tabs = [{
+			$scope.tabs = [
+				{
+					name: "create",
+					active: false
+				},
+				{
 					name: "open",
 					active: false
 				},
@@ -34,28 +31,39 @@ angular.module('kityminderPanel', [
 				}, {
 					name: "history",
 					active: false
+				},{
+					name: "cloud",
+					active: false
 				}, {
 					name: "help",
 					active: false
-				}, {
-					name: "cloud",
-					active: false
-				}
+				}, 
 			];
+
+			// 取消选择所有tabs
+			$scope.unSelectAll = function () {
+				for (var i = 0; i < $scope.tabs.length; i++) {
+					$scope.tabs[i].active = false;
+				}
+				$scope.current.name = '';
+
+			};
+			var current = $scope.current = {};
+
+
 
 			// 监听点击其他地方，收起菜单栏
 			angular.element('body')
 				.on('click', '.minder-editor-container', function () {
-					console.log($scope.current.name);
-					$timeout(function(){
-						$scope.current.name = '';
-						}, 0)
+					// console.log($scope.current.name);
+					$timeout(function () {
+						$scope.unSelectAll();
+					}, 0)
 				});
 
 		},
 		link: function ($scope) {
 			var minder = $scope.minder;
-
 
 			/**
 			 *  点击‘导出到本地’按钮触发事件

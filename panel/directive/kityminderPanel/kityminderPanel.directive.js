@@ -16,8 +16,7 @@ angular.module('kityminderPanel', [
 			};
 
 			// 顶部列表
-			$scope.tabs = [
-				{
+			$scope.tabs = [{
 					name: "create",
 					active: false
 				},
@@ -31,13 +30,13 @@ angular.module('kityminderPanel', [
 				}, {
 					name: "history",
 					active: false
-				},{
+				}, {
 					name: "cloud",
 					active: false
 				}, {
 					name: "help",
 					active: false
-				}, 
+				},
 			];
 
 			// 取消选择所有tabs
@@ -106,6 +105,21 @@ angular.module('kityminderPanel', [
 				});
 			}
 
+			/**
+			 *  点击‘分享’按钮触发事件
+			 */
+			$scope.shareClick = function () {
+				var importModal = $modal.open({
+					animation: true,
+					templateUrl: 'panel/dialog/share/share.tpl.html',
+					controller: 'share.ctrl',
+					size: 'md',
+				});
+
+				importModal.result.then(function (result) {
+					// minder.execCommand('image', result.url, result.title || '');
+				});
+			}
 		}
 	}
 }]);

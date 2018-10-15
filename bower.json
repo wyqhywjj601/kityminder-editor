@@ -44,7 +44,8 @@
     "hotbox": "~1.0.2",
     "color-picker": "~1.0.2",
     "kity": "^2.0.5",
-    "json-diff": "*"
+    "json-diff": "*",
+    "angular-ui-router": "^1.0.20"
   },
   "overrides": {
     "codemirror": {

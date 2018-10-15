@@ -76,8 +76,8 @@ module.exports = function (grunt) {
         browserSync: {
             bsFiles: {
                 dist: 'dist/css/*.css',
-                // src: 'dist/**'
-                src: 'panel/**'
+                src: 'dist/**'
+                // src: 'panel/**'
             },
             options: {
                 server: {
@@ -131,6 +131,17 @@ module.exports = function (grunt) {
                 files: [{
                     dest: 'dist/kityminder.editor.css',
                     src: 'less/editor.less'
+                }]
+            },
+            home: {
+                options: {
+                    sourceMap: true,
+                    sourceMapURL: 'kityminder.home.css.map',
+                    sourceMapFilename: 'dist/kityminder.home.css.map'
+                },
+                files: [{
+                    dest: 'dist/kityminder.home.css',
+                    src: 'less/home/home.less'
                 }]
             }
         },

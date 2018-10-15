@@ -5,8 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="dist/kityminder.home.css">
+
 </head>
-<body>
-meyoo
-</body>
+<body ng-app="mindManage"  ng-controller="manageCtrl" >
+<home></home>
+
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+
+
+<script>
+   var mindManage = angular.module('mindManage',['ui.router','ui.bootstrap']);
+
+   mindManage.controller('manageCtrl',function ($scope) {
+       
+});
+</script>
+
+<!-- router -->
+<script src="home/router/router-config.js"></script>
+
+<!--各模块controller-->
+<script src="home/view/self/selfMind/selfMind.ctrl.js"></script>
+<script src="home/view/self/myshare/myshare.ctrl.js"></script>
+<script src="home/view/self/mycollect/mycollect.ctrl.js"></script>
+<script src="home/view/self/recycleBin/recycleBin.ctrl.js"></script>
+<script src="home/view/self/help/help.ctrl.js"></script>
+
+<!-- 各模块directive -->
+<script src="home/view/home/home.directive.js"></script>
+
 </html>

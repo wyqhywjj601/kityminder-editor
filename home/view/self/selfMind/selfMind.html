@@ -18,21 +18,30 @@
                 <tbody class="table table-striped">
                 <tr>
                     <td class="col-md-1"><input type="checkbox" name="" id=""></td>
-                    <td class="col-md-6">xxxx.md</td>
-                    <td>xxxxxx</td>
-                    <td>...</td>
+                    <td class="col-md-6"><a href="javascript:;">xxxx.md</a></td>
+                    <td>2017-10-10</td>
+                    <td>
+                    <div class="btn-group" dropdown on-toggle="toggleDropdown()" is-open="status.isopen">
+                        <span dropdown-toggle class="option-btn"><?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1539593308932" class="icon" style="" viewBox="0 0 1210 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1640" xmlns:xlink="http://www.w3.org/1999/xlink" width="18.90625" height="16"><defs><style type="text/css"></style></defs><path d="M1163.636364 93.090909H46.545455a46.545455 46.545455 0 0 1 0-93.090909h1117.090909a46.545455 46.545455 0 0 1 0 93.090909zM887.156364 558.545455H46.545455a46.545455 46.545455 0 0 1 0-93.09091h837.818181a46.545455 46.545455 0 1 1 0 93.09091zM671.185455 1024H46.545455a46.545455 46.545455 0 0 1 0-93.090909h624.64a46.545455 46.545455 0 1 1 0 93.090909z" p-id="1641" fill="#707070"></path></svg></span>
+                        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                            <li role="menuitem"><a ng-click="fileRename()"  href="javascript:;">重命名</a></li>
+                            <li role="menuitem"><a href="javascript:;">删除</a></li>
+                            <li role="menuitem"><a href="javascript:;">分享设置</a></li>
+                         </ul>
+                    </div>
+                    </td>
                 </tr>
                 <tr>
                     <td><input type="checkbox" name="" id=""></td>
-                    <td class="col-md-6">xxxx.md</td>
-                    <td>xxxxxx</td>
-                    <td>...</td>
+                    <td class="col-md-6"><a href="javascript:;"  class="file-name">xxxx.md</a></td>
+                    <td>2017-10-10</td>
+                    <td><span class="option-btn"><?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1539593308932" class="icon" style="" viewBox="0 0 1210 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1640" xmlns:xlink="http://www.w3.org/1999/xlink" width="18.90625" height="16"><defs><style type="text/css"></style></defs><path d="M1163.636364 93.090909H46.545455a46.545455 46.545455 0 0 1 0-93.090909h1117.090909a46.545455 46.545455 0 0 1 0 93.090909zM887.156364 558.545455H46.545455a46.545455 46.545455 0 0 1 0-93.09091h837.818181a46.545455 46.545455 0 1 1 0 93.09091zM671.185455 1024H46.545455a46.545455 46.545455 0 0 1 0-93.090909h624.64a46.545455 46.545455 0 1 1 0 93.090909z" p-id="1641" fill="#707070"></path></svg></span></td>
                 </tr>
                 <tr>
                     <td><input type="checkbox" name="" id=""></td>
-                    <td class="col-md-6">xxxx.md</td>
-                    <td>xxxxxx</td>
-                    <td>...</td>
+                    <td class="col-md-6"><a href="javascript:;"  class="file-name">xxxx.md</a></td>
+                    <td>2017-10-10</td>
+                    <td><span class="option-btn"><?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1539593308932" class="icon" style="" viewBox="0 0 1210 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1640" xmlns:xlink="http://www.w3.org/1999/xlink" width="18.90625" height="16"><defs><style type="text/css"></style></defs><path d="M1163.636364 93.090909H46.545455a46.545455 46.545455 0 0 1 0-93.090909h1117.090909a46.545455 46.545455 0 0 1 0 93.090909zM887.156364 558.545455H46.545455a46.545455 46.545455 0 0 1 0-93.09091h837.818181a46.545455 46.545455 0 1 1 0 93.09091zM671.185455 1024H46.545455a46.545455 46.545455 0 0 1 0-93.090909h624.64a46.545455 46.545455 0 1 1 0 93.090909z" p-id="1641" fill="#707070"></path></svg></span></td>
                 </tr>
                 </tbody>
             </table>
@@ -42,11 +51,18 @@
     <style>
         .mind-table{
             margin-top:10px;
+            background:#fff;
         }
         .mind-operate .btn {
             margin-left: 5px;
         }
-        .mind-table{
-            background:#fff;
+
+        .mind-table .file-name a{
+            color:#337ab7;
+            font-size:14px;
+        }
+
+        .mind-table .option-btn{
+            cursor:pointer;
         }
     </style>

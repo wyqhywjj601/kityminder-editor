@@ -1,10 +1,12 @@
 /* global require, module */
 
 var path = require('path');
+var timer = require('grunt-timer');
 
 module.exports = function (grunt) {
     'use strict';
 
+    timer.init(grunt);
     // Load grunt tasks automatically
     require('load-grunt-tasks')(grunt);
     grunt.loadNpmTasks('grunt-browser-sync');
@@ -40,10 +42,17 @@ module.exports = function (grunt) {
         yeoman: appConfig,
 
         watch: {
+            options: {
+
+                livereload: true
+
+            },
             less: {
                 files: ['less/**/*.less'],
-                tasks:['less:compile'],
-                options: {livereload:true}
+                tasks: ['less:compile'],
+                options: {
+                    livereload: true
+                }
             }
         },
         clean: {
@@ -207,8 +216,6 @@ module.exports = function (grunt) {
                 }]
             }
         }
-
-
     });
 
     // Build task(s).

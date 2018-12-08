@@ -6,13 +6,13 @@ angular.module('kityminderPanel', [
 		restrict: 'E',
 		templateUrl: 'panel/directive/kityminderPanel/kityminderPanel.html',
 		replace: true,
-		controller: function ($scope, $element, $attrs, $transclude) {
+		controller: function ($scope,$location) {
+			console.log($location);
 			// 点击tab 选择
 			$scope.select = function (item) {
 				$scope.unSelectAll();
 				item.active = true;
 				$scope.current.name = item.name;
-				console.log($scope.current.name);
 			};
 
 			// 顶部列表
@@ -47,8 +47,8 @@ angular.module('kityminderPanel', [
 				$scope.current.name = '';
 
 			};
-			var current = $scope.current = {};
 
+			var current = $scope.current = {};
 
 
 			// 监听点击其他地方，收起菜单栏
@@ -117,6 +117,24 @@ angular.module('kityminderPanel', [
 				});
 
 				importModal.result.then(function (result) {
+					console.log(result);
+					// minder.execCommand('image', result.url, result.title || '');
+				});
+			}
+
+			/**
+			 *  点击‘快捷键’按钮触发事件
+			 */
+			$scope.helpClick = function () {
+				var importModal = $modal.open({
+					animation: true,
+					templateUrl: 'panel/dialog/help/help.tpl.html',
+					controller: 'help.ctrl',
+					size: 'md',
+				});
+
+				importModal.result.then(function (result) {
+					console.log(result);
 					// minder.execCommand('image', result.url, result.title || '');
 				});
 			}

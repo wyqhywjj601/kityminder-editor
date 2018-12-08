@@ -1,5 +1,6 @@
+
 angular.module('kityminderEditor')
-    .directive('arrange', ['commandBinder', function(commandBinder) {
+    .directive('arrange', ['commandBinder', function (commandBinder) {
         return {
             restrict: 'E',
             templateUrl: 'ui/directive/arrange/arrange.html',
@@ -7,8 +8,8 @@ angular.module('kityminderEditor')
                 minder: '='
             },
             replace: true,
-            link: function($scope) {
-                var minder = $scope.minder;
+            link: function ($scope) {
+                // var minder = $scope.minder;
 
                 //commandBinder.bind(minder, 'priority', $scope);
             }

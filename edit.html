@@ -100,6 +100,7 @@
 <script src="panel/dialog/derive/derive.ctrl.js"></script>
 <script src="panel/dialog/importModal/importModal.ctrl.js"></script> 
 <script src="panel/dialog/share/share.ctrl.js"></script>
+<script src="panel/dialog/help/help.ctrl.js"></script>
 <script src="panel/directive/recentlyList/recentlyList.directive.js"></script>
 <script src="panel/directive/createMind/createMind.directive.js"></script>
 
@@ -111,13 +112,6 @@
 					window.editor = editor;
 					window.minder = minder;
 				};
-
-                $scope.add=function () {				//定义ng-click触发的函数add();
-                if($scope.goods.num<$scope.goods.kucun){
-                    $scope.goods.num++;
-                }
-                };
-
         });
 
 </script>

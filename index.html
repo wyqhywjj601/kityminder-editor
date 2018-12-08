@@ -9,36 +9,53 @@
 	<link rel="stylesheet" href="dist/kityminder.home.css">
 
 </head>
-<body ng-app="mindManage"  ng-controller="manageCtrl" >
+<body ng-app="mindManage">
 <home></home>
-
+<toast></toast>
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/seajs/dist/sea.js"></script>
+
+
+<!-- Toast组件  https://github.com/tameraydin/ngToast -->
+<link rel="stylesheet" href="bower_components/ngtoast/dist/ngToast.min.css">
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="bower_components/ngtoast/dist/ngToast.min.js"></script>
+
 <script>
-   var mindManage = angular.module('mindManage',['ui.router','ui.bootstrap']);
-    
-   mindManage.controller('manageCtrl',function ($scope) {
-       
-});
+   var mindManage = angular.module('mindManage',['ui.router','ui.bootstrap','commonTool']);
+
+    mindManage.value('templateURL',{
+    MODAL_URL: '/common/directives/modal/modal.html'
+    });
+
 </script>
 
 <!-- router -->
 <script src="home/router/router-config.js"></script>
 
 <!--各模块controller-->
-<script src="home/view/self/selfMind/selfMind.ctrl.js"></script>
-<script src="home/view/self/myshare/myshare.ctrl.js"></script>
-<script src="home/view/self/mycollect/mycollect.ctrl.js"></script>
-<script src="home/view/self/recycleBin/recycleBin.ctrl.js"></script>
-<script src="home/view/self/help/help.ctrl.js"></script>
-<script src="home/view/self/selfMind/modal/rename/rename.ctrl.js"></script>
+<script src="home/directive/self/selfMind/selfMind.ctrl.js"></script>
+<script src="home/directive/self/myshare/myshare.ctrl.js"></script>
+<script src="home/directive/self/mycollect/mycollect.ctrl.js"></script>
+<script src="home/directive/self/recycleBin/recycleBin.ctrl.js"></script>
+<script src="home/directive/self/help/help.ctrl.js"></script>
+<script src="home/directive/self/selfMind/components/rename/rename.ctrl.js"></script>
+<script src="home/directive/self/selfMind/components/delete/delete.ctrl.js"></script>
+<script src="home/directive/self/selfMind/components/folder/folder.ctrl.js"></script>
+
+
+<!--  公共组件directives  -->
+<script src="common/common.js"></script>
+<script src="common/directives/modal/modal.directive.js"></script>
+
 
 <!-- 各模块directive -->
-<script src="home/view/home/home.directive.js"></script>
+<script src="home/directive/home/home.directive.js"></script>
 
 
 </html>
